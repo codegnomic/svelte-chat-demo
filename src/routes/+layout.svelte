@@ -5,6 +5,6 @@
 
 <Nav />
 
-<div class="ml-8">
+<div class="">
     <slot />
 </div>

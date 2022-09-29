@@ -25,7 +25,7 @@
 </script>
 
 <nav
-    class="z-50 fixed left-0 w-8 h-screen flex flex-col justify-around items-center bg-orange-400"
+    class="z-50 fixed left-0 top-0 h-8 w-screen flex justify-around items-center bg-orange-400"
 >
     <a href="/" title="home"><Icon icon="bxs:home" /></a>
     <button on:click={() => handleMenu("user")} title="user"
@@ -37,8 +37,8 @@
 </nav>
 
 <div
-    class={`z-10 absolute top-0 h-screen overflow-hidden bg-purple-500 transition-all ${
-        showUser ? "w-screen" : "w-0"
+    class={`z-10 absolute top-0 w-screen overflow-hidden bg-purple-500 transition-all ${
+        showUser ? "h-screen" : "h-0"
     } flex flex-col items-center justify-center`}
 >
     {#if $userState.user}
@@ -52,12 +52,13 @@
 </div>
 
 <div
-    class={`z-10 absolute top-0 h-screen overflow-hidden bg-blue-400 transition-all ${
-        showRooms ? "w-screen" : "w-0"
+    class={`z-10 absolute top-0 w-screen overflow-hidden bg-blue-400 transition-all ${
+        showRooms ? "h-screen" : "h-0"
     } flex flex-col items-center justify-center`}
 >
     {#if $userState.user}
-        <h3 class="text-lg underline bg-blue-600 text-white">Rooms:</h3>
+        <a href="/messages">Messages</a>
+        <h3 class="text-lg underline">Rooms:</h3>
         {#each $roomsState.rooms as room}
             <a href={`/room/${room.title}`}>{room.title}</a>
         {/each}

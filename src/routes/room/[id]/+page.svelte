@@ -46,7 +46,7 @@
     }
 </script>
 
-<div class={`h-screen w-full bg-purple-900 text-white flex flex-col`}>
+<div class={`h-screen w-full pt-8 bg-purple-900 text-white flex flex-col`}>
     {#if $roomsState.rooms && data.posts}
         <div bind:this={chatWindow} class={`p-2 overflow-y-scroll flex-grow`}>
             {#each data.posts.items as post}
